@@ -4,9 +4,9 @@ netural === neural net, simple ai for the web.
 
 ## Features
 
-* Super tiny size, 1 KB (gzip)
-* Good compatibility, support IE8
 * Simple API
+* Super tiny size, 1 KB (gzip)
+* Support for forward propagation and back propagation
 
 ## Install
 
