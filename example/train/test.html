@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <canvas width="400"  height="400" style="border:1px solid #ccc;position: absolute;z-index: 2;left: 0px;top:0px;"  >
+
+
+    </canvas>
+    <img src="qq.png" style="position: absolute;z-index:1;left: 100px;top:100px;">
+<script>
+    var canvas = document.querySelector('canvas')
+    var ctx = canvas.getContext('2d')
+    ctx.translate(200,200)
+    ctx.scale(1,-1)
+    var a = []
+    var b = []
+    var tag = true
+    var offset = canvas.getBoundingClientRect()
+    canvas.addEventListener('click',function(evt){
+        console.log()
+        if(tag){
+            a.push({x:evt.pageX-offset.left-200,y:(evt.pageY -offset.top)*-1+200})
+        }else{
+            b.push({x:evt.pageX-offset.left-200,y:(evt.pageY -offset.top)*-1+200})
+        }
+
+        render()
+    })
+
+
+    function render() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        a.forEach(function (p) {
+
+            ctx.beginPath()
+            ctx.fillStyle = 'green'
+            ctx.arc(p.x, p.y, 5, 0, Math.PI * 2)
+            ctx.closePath()
+            ctx.fill()
+
+        })
+
+        b.forEach(function (p) {
+
+            ctx.beginPath()
+            ctx.fillStyle = 'red'
+            ctx.arc(p.x, p.y, 5, 0, Math.PI * 2)
+            ctx.closePath()
+            ctx.fill()
+
+        })
+    }
+
+    window.onkeyup = function(evt){
+        if(evt.key ==='s'){
+            tag = !tag
+        }
+    }
+</script>
+</body>
+</html>
