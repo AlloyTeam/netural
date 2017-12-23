@@ -1,6 +1,6 @@
-<p align="center">
+<h1 align="center">
 netural === neural net, simple ai for the web.
-</p>
+</h1>
 
 ## Features
 
