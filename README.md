@@ -29,7 +29,7 @@ let network = new netural.Network({
 })
 
 //output: [0.010000000002984098, 0.9899999999997068]
-network.train( [0.01 , 0.99],300000)
+network.train([0.01, 0.99], 300000)
 ```
 
 # License
