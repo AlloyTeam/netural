@@ -1,6 +1,6 @@
 ## Netural
 
-netural === neural net, simple ai for the web.
+netural === neural net, simple AI for the web.
 
 ## Features
 
