@@ -19,8 +19,8 @@ console.log(network.output)
 //let network = new Network({
 //    framework: [2, 2, 3],
 //    layers: [
-//        {w: [0.15, 0.20, 0.25, 0.30], b: 0.35 , type: 'sigmoid'},
-//        {w: [0.40, 0.45, 0.50, 0.55, 0.116, 0.115], b: 0.60, type:'softmax'}
+//        {w: [0.15, 0.20, 0.25, 0.30], b: 0.35 , type: netural.SIGMOID},
+//        {w: [0.40, 0.45, 0.50, 0.55, 0.116, 0.115], b: 0.60, type: netural.SOFTMAX}
 //    ],
 //    input: [0.05, 0.10]
 //})
