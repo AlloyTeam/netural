@@ -302,7 +302,7 @@ var Network = function () {
                     for (var k = 0, nLen = prevLayer.neurons.length; k < nLen; k++) {
                         sum += prevLayer.neurons[k].value * this.layers[i].neurons[j].weights[k];
                     }
-                    if (this.layers[i].type === _netural2.default.SIGMOID) {
+                    if (this.layers[i].type === 'sigmoid') {
                         this.layers[i].neurons[j].value = this.sigmoid(sum + this.layers[i].neurons[j].b);
                     } else if (this.layers[i].type === _netural2.default.SOFTMAX) {
                         this.layers[i].neurons[j].value = sum + this.layers[i].neurons[j].b;
@@ -349,7 +349,7 @@ var Network = function () {
         value: function derivationSquareError(layer, layerIndex) {
             var _this3 = this;
 
-            if (layer.type === _netural2.default.SIGMOID) {
+            if (layer.type === 'sigmoid') {
                 layer.neurons.forEach(function (neuron, index) {
                     var sum = 0;
                     _this3.layers[layerIndex + 1].neurons.forEach(function (_neuron, _index) {
@@ -388,7 +388,7 @@ var Network = function () {
         value: function derivationOutputSquareError(target, layer) {
             if (layer.type === _netural2.default.SOFTMAX) {
                 this.derivationSoftMaxSquareError(target, layer);
-            } else if (layer.type === _netural2.default.SIGMOID) {
+            } else if (layer.type === 'sigmoid') {
                 this.derivationSigmoidSquareError(target, layer);
             } else if (layer.type === _netural2.default.RELU) {
                 this.derivationReluSquareError(target, layer);
