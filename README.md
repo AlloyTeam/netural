@@ -31,7 +31,7 @@ network.train([0.01, 0.99], 300000)
 
 分类过程可视化如下:
 
-![](https://omi.cdn-go.cn/s/latest/omiu/classification.gif)
+![](./classification.gif)
 
 a 和 b 数据集:
 
