@@ -27,7 +27,7 @@ const network = new netural.Network({
 network.train([0.01, 0.99], 300000)
 ```
 
-## 分类
+## 分类示例
 
 分类过程可视化如下:
 
