@@ -46,16 +46,7 @@ const data = {
 
 ```js
 function preprocessing(data) {
-  const arr = []
-  data.a.forEach(function (p) {
-    p.tag = true
-    arr.push(p)
-  })
-  data.b.forEach(function (p) {
-    p.tag = false
-    arr.push(p)
-  })
-  return arr
+  return [...data.a.map(p => ({...p, tag: true})), ...data.b.map(p => ({...p, tag: false}))]
 }
 ```
 
@@ -67,9 +58,9 @@ import netural from 'netural'
 const network = new Network({
   framework: [2, 6, 6, 1],
   layers: [
-    { type: "sigmoid" },
-    { type: "sigmoid" },
-    { type: "sigmoid" }
+    { type: netural.SIGMOID },
+    { type: netural.SIGMOID },
+    { type: netural.SIGMOID }
   ]
 })
 
@@ -83,7 +74,6 @@ function train() {
     onEnd: function () {
       count++
       index++
-
       if (index === arr.length) {
         index = 0
       }
@@ -98,6 +88,23 @@ function train() {
 }
 
 train()
+```
+
+渲染训练过程:
+
+```js
+function renderTrain() {
+  ctx.clearRect(-200, -200, 400, 400)
+  for (let i = 0; i < 80; i++) {
+    for (let j = 0; j < 80; j++) {
+      let x = i * 5 + 2.5 - 200
+      let y = 200 - j * 5 - 2.5
+      // 前向传播计算
+      ctx.fillStyle = network.compute([x / 200, y / 200])[0] > 0.5 ? 'rgba(155,20,20,0.5)' : 'rgba(20,155,20,0.5)'
+      ctx.fillRect(x - 2.5, y - 2.5, 5, 5)
+    }
+  }
+}
 ```
 
 # License
