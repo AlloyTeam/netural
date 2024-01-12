@@ -1,6 +1,6 @@
 ## Netural
 
-JavaScript的前向神经网络和反向传播的实现。
+JavaScript的前向神经网络(推理)和反向传播(训练)的实现。
 
 ## 安装
 
