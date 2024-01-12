@@ -99,7 +99,7 @@ function renderTrain() {
     for (let j = 0; j < 80; j++) {
       let x = i * 5 + 2.5 - 200
       let y = 200 - j * 5 - 2.5
-      // 前向传播计算
+      // 前向传播推理计算
       ctx.fillStyle = network.compute([x / 200, y / 200])[0] > 0.5 ? 'rgba(155,20,20,0.5)' : 'rgba(20,155,20,0.5)'
       ctx.fillRect(x - 2.5, y - 2.5, 5, 5)
     }
